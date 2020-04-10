@@ -2,9 +2,9 @@
 
 ### Screens do App
 
-![login](https://github.com/wellytonmarcos/flutter-to-do-mobx/blob/master/images/login.jpg | widht=250)
+![login](https://github.com/wellytonmarcos/flutter-to-do-mobx/blob/master/images/login.jpg)
 
-![todo](https://github.com/wellytonmarcos/flutter-to-do-mobx/blob/master/images/todo.jpg =250)
+![todo](https://github.com/wellytonmarcos/flutter-to-do-mobx/blob/master/images/todo.jpg "Todo Img")
 
 App To-Do em Flutter com MobX
 
