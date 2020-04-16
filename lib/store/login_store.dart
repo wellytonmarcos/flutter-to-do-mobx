@@ -16,11 +16,15 @@ abstract class _LoginStore with Store {
   String email = "";
   @observable
   String password = "";
+  @observable
+  bool passwordVisible = false;
 
   @action
   void setEmail(String value) => email = value;
   @action
   void setPassword(String value) => password = value;
+  @action
+  void togglePasswordVisible(String value) => passwordVisible = !passwordVisible;
 
   @computed
   bool get isPasswordValid => password.length > 6;
@@ -30,4 +34,7 @@ abstract class _LoginStore with Store {
 
   @computed
   bool get isFormValid => isPasswordValid && isEmailValid;
+
+  @computed
+  bool get isVisiblePassword => passwordVisible;
 }

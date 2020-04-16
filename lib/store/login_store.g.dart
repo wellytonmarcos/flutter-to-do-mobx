@@ -26,6 +26,12 @@ mixin _$LoginStore on _LoginStore, Store {
   @override
   bool get isFormValid =>
       (_$isFormValidComputed ??= Computed<bool>(() => super.isFormValid)).value;
+  Computed<bool> _$isVisiblePasswordComputed;
+
+  @override
+  bool get isVisiblePassword => (_$isVisiblePasswordComputed ??=
+          Computed<bool>(() => super.isVisiblePassword))
+      .value;
 
   final _$emailAtom = Atom(name: '_LoginStore.email');
 
@@ -61,6 +67,23 @@ mixin _$LoginStore on _LoginStore, Store {
     }, _$passwordAtom, name: '${_$passwordAtom.name}_set');
   }
 
+  final _$passwordVisibleAtom = Atom(name: '_LoginStore.passwordVisible');
+
+  @override
+  bool get passwordVisible {
+    _$passwordVisibleAtom.context.enforceReadPolicy(_$passwordVisibleAtom);
+    _$passwordVisibleAtom.reportObserved();
+    return super.passwordVisible;
+  }
+
+  @override
+  set passwordVisible(bool value) {
+    _$passwordVisibleAtom.context.conditionallyRunInAction(() {
+      super.passwordVisible = value;
+      _$passwordVisibleAtom.reportChanged();
+    }, _$passwordVisibleAtom, name: '${_$passwordVisibleAtom.name}_set');
+  }
+
   final _$_LoginStoreActionController = ActionController(name: '_LoginStore');
 
   @override
@@ -84,9 +107,19 @@ mixin _$LoginStore on _LoginStore, Store {
   }
 
   @override
+  void togglePasswordVisible(String value) {
+    final _$actionInfo = _$_LoginStoreActionController.startAction();
+    try {
+      return super.togglePasswordVisible(value);
+    } finally {
+      _$_LoginStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     final string =
-        'email: ${email.toString()},password: ${password.toString()},isPasswordValid: ${isPasswordValid.toString()},isEmailValid: ${isEmailValid.toString()},isFormValid: ${isFormValid.toString()}';
+        'email: ${email.toString()},password: ${password.toString()},passwordVisible: ${passwordVisible.toString()},isPasswordValid: ${isPasswordValid.toString()},isEmailValid: ${isEmailValid.toString()},isFormValid: ${isFormValid.toString()},isVisiblePassword: ${isVisiblePassword.toString()}';
     return '{$string}';
   }
 }
