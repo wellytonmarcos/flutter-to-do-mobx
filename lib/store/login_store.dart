@@ -24,7 +24,7 @@ abstract class _LoginStore with Store {
   @action
   void setPassword(String value) => password = value;
   @action
-  void togglePasswordVisible(String value) => passwordVisible = !passwordVisible;
+  void togglePasswordVisible() => passwordVisible = !passwordVisible;
 
   @computed
   bool get isPasswordValid => password.length > 6;

@@ -107,10 +107,10 @@ mixin _$LoginStore on _LoginStore, Store {
   }
 
   @override
-  void togglePasswordVisible(String value) {
+  void togglePasswordVisible() {
     final _$actionInfo = _$_LoginStoreActionController.startAction();
     try {
-      return super.togglePasswordVisible(value);
+      return super.togglePasswordVisible();
     } finally {
       _$_LoginStoreActionController.endAction(_$actionInfo);
     }

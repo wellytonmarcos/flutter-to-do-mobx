@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         return CustomTextField(
                           hint: 'Senha',
                           prefix: Icon(Icons.lock),
-                          obscure: loginStore.isVisiblePassword,
+                          obscure: !loginStore.isVisiblePassword,
                           onChanged: loginStore.setPassword,
                           enabled: true,
                           suffix: CustomIconButton(
