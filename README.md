@@ -6,7 +6,7 @@ Projeto baseado no Curso de Flutter do Daniel Ciolfi
 
 ![login](https://github.com/wellytonmarcos/flutter-to-do-mobx/blob/master/images/login.jpg)
 
-![todo](https://github.com/wellytonmarcos/flutter-to-do-mobx/blob/master/images/todo.jpg "Todo Img")
+![todo](https://github.com/wellytonmarcos/flutter-to-do-mobx/blob/master/images/todo.jpg)
 
 ### Store
 
